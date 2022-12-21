@@ -4,18 +4,18 @@ import { useRouter } from "next/router";
 import clsx from "clsx";
 import { AnimatePresence, motion, useIsPresent } from "framer-motion";
 
-import { Button } from "@/components/Button";
-import { useIsInsideMobileNavigation } from "@/components/MobileNavigation";
-import { useSectionStore } from "@/components/SectionProvider";
-import { Tag } from "@/components/Tag";
-import { remToPx } from "@/lib/remToPx";
+import { Button } from "./Button";
+import { useIsInsideMobileNavigation } from "./MobileNavigation";
+import { useSectionStore } from "./SectionProvider";
+import { Tag } from "./Tag";
+import { remToPx } from "./../lib/remToPx";
 
-function useInitialValue(value, condition = true) {
+function useInitialValue(value: any, condition = true) {
   const initialValue = useRef(value).current;
   return condition ? initialValue : value;
 }
 
-function TopLevelNavItem({ href, children }) {
+function TopLevelNavItem({ href, children }: any) {
   return (
     <li className="md:hidden">
       <Link
@@ -28,7 +28,7 @@ function TopLevelNavItem({ href, children }) {
   );
 }
 
-function NavLink({ href, tag, active, isAnchorLink = false, children }) {
+function NavLink({ href, tag, active, isAnchorLink = false, children }: any) {
   return (
     <Link
       href={href}
@@ -51,11 +51,11 @@ function NavLink({ href, tag, active, isAnchorLink = false, children }) {
   );
 }
 
-function VisibleSectionHighlight({ group, pathname }) {
+function VisibleSectionHighlight({ group, pathname }: any) {
   const [sections, visibleSections] = useInitialValue(
     [
-      useSectionStore((s) => s.sections),
-      useSectionStore((s) => s.visibleSections),
+      useSectionStore((s: any) => s.sections),
+      useSectionStore((s: any) => s.visibleSections),
     ],
     useIsInsideMobileNavigation()
   );
@@ -72,7 +72,8 @@ function VisibleSectionHighlight({ group, pathname }) {
     ? Math.max(1, visibleSections.length) * itemHeight
     : itemHeight;
   const top =
-    group.links.findIndex((link) => link.href === pathname) * itemHeight +
+    group.links.findIndex((link: { href: any }) => link.href === pathname) *
+      itemHeight +
     firstVisibleSectionIndex * itemHeight;
 
   return (
@@ -87,11 +88,11 @@ function VisibleSectionHighlight({ group, pathname }) {
   );
 }
 
-function ActivePageMarker({ group, pathname }) {
+function ActivePageMarker({ group, pathname }: any) {
   const itemHeight = remToPx(2);
   const offset = remToPx(0.25);
   const activePageIndex = group.links.findIndex(
-    (link) => link.href === pathname
+    (link: any) => link.href === pathname
   );
   const top = offset + activePageIndex * itemHeight;
 
@@ -107,7 +108,7 @@ function ActivePageMarker({ group, pathname }) {
   );
 }
 
-function NavigationGroup({ group, className }) {
+function NavigationGroup({ group, className }: any) {
   // If this is the mobile navigation then we always render the initial
   // state, so that the state does not change during the close animation.
   // The state will still update when we re-open (re-render) the navigation.
@@ -118,7 +119,7 @@ function NavigationGroup({ group, className }) {
   );
 
   const isActiveGroup =
-    group.links.findIndex((link) => link.href === router.pathname) !== -1;
+    group.links.findIndex((link: any) => link.href === router.pathname) !== -1;
 
   return (
     <li className={clsx("relative mt-6", className)}>
@@ -144,7 +145,7 @@ function NavigationGroup({ group, className }) {
           )}
         </AnimatePresence>
         <ul role="list" className="border-l border-transparent">
-          {group.links.map((link) => (
+          {group.links.map((link: any) => (
             <motion.li key={link.href} layout="position" className="relative">
               <NavLink href={link.href} active={link.href === router.pathname}>
                 {link.title}
@@ -163,7 +164,7 @@ function NavigationGroup({ group, className }) {
                       transition: { duration: 0.15 },
                     }}
                   >
-                    {sections.map((section) => (
+                    {sections.map((section: any) => (
                       <li key={section.id}>
                         <NavLink
                           href={`${link.href}#${section.id}`}
@@ -210,7 +211,7 @@ export const navigation = [
   },
 ];
 
-export function Navigation(props) {
+export function Navigation(props: any) {
   return (
     <nav {...props}>
       <ul role="list">

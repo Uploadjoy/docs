@@ -1,12 +1,12 @@
 import Link from "next/link";
 import clsx from "clsx";
 
-import { Heading } from "@/components/Heading";
+import { Heading } from "./Heading";
 import type { HTMLProps, ReactNode, SVGProps } from "react";
 
 export const a = Link;
 export { Button } from "./Button";
-export { CodeGroup, Code as code, Pre as pre } from "@/components/Code";
+export { CodeGroup, Code as code, Pre as pre } from "./Code";
 
 export const h2 = function H2(props: HTMLProps<HTMLHeadingElement>) {
   return <Heading level={2} {...props} />;

@@ -1,10 +1,11 @@
-import Head from "next/head";
-import { Router, useRouter } from "next/router";
+import { Router } from "next/router";
 import { MDXProvider } from "@mdx-js/react";
 import { DefaultSeo } from "next-seo";
 import { Inter } from "@next/font/google";
 
 import { useMobileNavigationStore } from "../components/MobileNavigation";
+import { Layout } from "../components/Layout";
+import * as mdxComponents from "../components/mdx";
 
 import { type AppType } from "next/app";
 
@@ -53,7 +54,11 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
-      <Component {...pageProps} />
+      <MDXProvider components={mdxComponents as any}>
+        <Layout {...pageProps}>
+          <Component {...pageProps} />
+        </Layout>
+      </MDXProvider>
     </>
   );
 };
