@@ -1,17 +1,23 @@
-// @ts-check
-/**
- * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
- * This is especially useful for Docker builds.
- */
-!process.env.SKIP_ENV_VALIDATION && (await import("./src/env/server.mjs"));
+import nextMDX from '@next/mdx'
+import { remarkPlugins } from './mdx/remark.mjs'
+import { rehypePlugins } from './mdx/rehype.mjs'
+import { recmaPlugins } from './mdx/recma.mjs'
 
-/** @type {import("next").NextConfig} */
-const config = {
-  reactStrictMode: true,
-  swcMinify: true,
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
+const withMDX = nextMDX({
+  options: {
+    remarkPlugins,
+    rehypePlugins,
+    recmaPlugins,
   },
-};
-export default config;
+})
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  experimental: {
+    scrollRestoration: true,
+  },
+}
+
+export default withMDX(nextConfig)
