@@ -8,6 +8,7 @@ import { Navigation } from "./Navigation";
 import { Prose } from "./Prose";
 import { SectionProvider } from "./SectionProvider";
 import type { ReactNode } from "react";
+import { Note } from "./mdx";
 
 export function Layout({
   children,
@@ -33,7 +34,16 @@ export function Layout({
         </motion.header>
         <div className="relative px-4 pt-14 sm:px-6 lg:px-8">
           <main className="py-16">
-            <Prose as="article">{children}</Prose>
+            <Prose as="article">
+              <Note>
+                Uploadjoy is currently in alpha development. Frequent changes
+                and additions to APIs, documentation, and SDKs should be
+                expected. If you have any questions or problems with the
+                documentation, please reach out and file an issue on
+                [GitHub](https://github.com/Uploadjoy/docs).
+              </Note>
+              {children}
+            </Prose>
           </main>
           <Footer />
         </div>
