@@ -1,29 +1,39 @@
 export const description =
-  "Learn everything there is to know about the Protocol API and integrate Protocol into your product.";
+  "Learn everything there is to know about the Uploadjoy API and integrate Uploadjoy into your product.";
 
-export const sections = [
-  { title: "Guides", id: "guides" },
-  { title: "Resources", id: "resources" },
-];
+<Note>
+  Uploadjoy is currently in alpha development. Frequent changes and additions to
+  APIs, documentation, and SDKs should be expected. If you have any questions or
+  problems with the documentation, please reach out and file an issue on
+  [GitHub](https://github.com/Uploadjoy/docs).
+</Note>
 
 # API Documentation
 
-Use the Protocol API to access contacts, conversations, group messages, and more and seamlessly integrate your product into the workflows of dozens of devoted Protocol users. {{ className: 'lead' }}
+Use the Uploadjoy API to seamlessly create presigned URLs, manage multipart uploads, and more without the need to configure and manage your own S3 buckets. {{ className: 'lead' }}
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
   <Button href="/quickstart" arrow="right" children="Quickstart" />
-  <Button href="/sdks" variant="outline" children="Explore SDKs" />
+  <Button
+    href="https://github.com/Uploadjoy/uploadjoy/tree/main/examples"
+    variant="outline"
+    target="_blank"
+    children="Explore Examples"
+  />
 </div>
 
-## Getting started {{ anchor: false }}
+## Getting started
 
-To get started, create a new application in your [developer settings](#), then read about how to make requests for the resources you need to access using our HTTP APIs or dedicated client SDKs. When your integration is ready to go live, publish it to our [integrations directory](#) to reach the Protocol community. {{ className: 'lead' }}
+To get started, create a new project within Uploadjoy and a new API key within the project's developer settings. An API key is necessary to make API calls using our dedicated client SDKs. Once you have created and saved your API key, you are ready to start building with Uploadjoy. {{ className: 'lead' }}
+
+<Note>API keys are scoped to the specific project it was created in.</Note>
 
 <div className="not-prose">
   <Button
-    href="/sdks"
+    href="https://uploadjoy.com/app"
     variant="text"
     arrow="right"
     children="Get your API key"
+    target="_blank"
   />
 </div>

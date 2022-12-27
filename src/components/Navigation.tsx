@@ -188,25 +188,17 @@ function NavigationGroup({ group, className }: any) {
 
 export const navigation = [
   {
-    title: "Guides",
+    title: "General",
     links: [
       { title: "Introduction", href: "/" },
       { title: "Quickstart", href: "/quickstart" },
-      { title: "SDKs", href: "/sdks" },
-      { title: "Authentication", href: "/authentication" },
-      { title: "Pagination", href: "/pagination" },
-      { title: "Errors", href: "/errors" },
-      { title: "Webhooks", href: "/webhooks" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { title: "Contacts", href: "/contacts" },
-      { title: "Conversations", href: "/conversations" },
-      { title: "Messages", href: "/messages" },
-      { title: "Groups", href: "/groups" },
-      { title: "Attachments", href: "/attachments" },
+      { title: "Presigned URLs", href: "/presignedUrls" },
+      { title: "Multipart Uploads", href: "/multipartUploads" },
     ],
   },
 ];
@@ -215,9 +207,6 @@ export function Navigation(props: any) {
   return (
     <nav {...props}>
       <ul role="list">
-        <TopLevelNavItem href="#">API</TopLevelNavItem>
-        <TopLevelNavItem href="#">Documentation</TopLevelNavItem>
-        <TopLevelNavItem href="#">Support</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}
@@ -226,8 +215,13 @@ export function Navigation(props: any) {
           />
         ))}
         <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
-          <Button href="#" variant="filled" className="w-full">
-            Sign in
+          <Button
+            href="https://uploadjoy.com/app"
+            variant="filled"
+            className="w-full"
+            target="_blank"
+          >
+            Open app
           </Button>
         </li>
       </ul>

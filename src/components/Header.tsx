@@ -70,12 +70,14 @@ export const Header = forwardRef<HTMLDivElement, { className?: string }>(
             <Logo className="h-6" />
           </Link>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex w-full items-center justify-end gap-5">
           <div className="flex gap-4">
             <ModeToggle />
           </div>
           <div className="hidden min-[416px]:contents">
-            <Button href="#">Sign in</Button>
+            <Button href="https://uploadjoy.com/app" target="_blank">
+              Open app
+            </Button>
           </div>
         </div>
       </motion.div>

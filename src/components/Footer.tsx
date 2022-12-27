@@ -204,7 +204,7 @@ function SocialLink({
   icon: any;
 }) {
   return (
-    <Link href={href} className="group">
+    <Link href={href} className="group" target={"_blank"}>
       <span className="sr-only">{children}</span>
       <Icon className="h-5 w-5 fill-zinc-700 transition group-hover:fill-zinc-900 dark:group-hover:fill-zinc-500" />
     </Link>
@@ -215,13 +215,16 @@ function SmallPrint() {
   return (
     <div className="flex flex-col items-center justify-between gap-5 border-t border-zinc-900/5 pt-8 dark:border-white/5 sm:flex-row">
       <p className="text-xs text-zinc-600 dark:text-zinc-400">
-        &copy; Copyright {new Date().getFullYear()}. All rights reserved.
+        &copy; {new Date().getFullYear()} Uploadjoy. All rights reserved.
       </p>
       <div className="flex gap-4">
         {/* <SocialLink href="#" icon={TwitterIcon}>
           Follow us on Twitter
         </SocialLink> */}
-        <SocialLink href="https://github.com/Uploadjoy" icon={GitHubIcon}>
+        <SocialLink
+          href="https://github.com/Uploadjoy/uploadjoy"
+          icon={GitHubIcon}
+        >
           Follow us on GitHub
         </SocialLink>
         {/* <SocialLink href="#" icon={DiscordIcon}>
