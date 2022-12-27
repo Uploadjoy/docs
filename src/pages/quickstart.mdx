@@ -30,7 +30,7 @@ npm install @example/protocol-api --save
 
 ## Making your first API request
 
-After picking your preferred client, you are ready to make your first call to the Uplaodjoy API. Below, you can see how to send a request to get a presigned URL to download a specific object.
+After picking your preferred client, you are ready to make your first call to the Uploadjoy API. Below, you can see how to send a request to get a presigned URL to download a specific object.
 
 <CodeGroup tag="POST" label="/v1/persigned-url">
 
@@ -38,7 +38,7 @@ After picking your preferred client, you are ready to make your first call to th
 import { Uploadjoy } from "@uploadjoy/client";
 
 export const ujClient = new Uploadjoy({
-  apiToken: "abcdefg",
+  apiToken: process.env.UPLOADJOY_API_TOKEN,
 });
 
 const keys = ["my-private-file.jpg"];
