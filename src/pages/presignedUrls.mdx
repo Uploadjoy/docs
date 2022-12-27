@@ -208,6 +208,13 @@ You can configure the presigned URL returned by the API by passing an object to 
     const ujClient = new Uploadjoy({
       apiToken: process.env.UPLOADJOY_API_TOKEN,
     });
+
+    const response = await ujClient.presignedUrl
+      .multipartUploadObject({
+        key: "key.jpg",
+        filePartNames: ["part-1.jpg", "part-2.jpg"],
+        visibility: "private",
+      });
     ```
 
     </CodeGroup>
