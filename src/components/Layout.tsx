@@ -39,8 +39,11 @@ export function Layout({
                 Uploadjoy is currently in alpha development. Frequent changes
                 and additions to APIs, documentation, and SDKs should be
                 expected. If you have any questions or problems with the
-                documentation, please reach out and file an issue on
-                [GitHub](https://github.com/Uploadjoy/docs).
+                documentation, please reach out and file an issue on{" "}
+                <Link href="https://github.com/Uploadjoy/docs" target="_blank">
+                  GitHub
+                </Link>
+                .
               </Note>
               {children}
             </Prose>
