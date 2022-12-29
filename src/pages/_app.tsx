@@ -40,7 +40,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
             "Upload and host objects like images and videos with Uploadjoy. It's the fastest way to get static files for your applications to your users.",
           images: [
             {
-              url: "https://uploadjoy.com/open-graph.png",
+              url: "https://uploadjoy.com/og.png",
               width: 1200,
               height: 630,
               alt: "Simple object storage and sharing.",
