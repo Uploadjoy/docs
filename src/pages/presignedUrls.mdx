@@ -147,19 +147,13 @@ You can configure the presigned URL returned by the API by passing an object to 
     ```ts {{ title: 'Response' }}
     type Response {
       data?: {
-        presignedUrls: (
-          | {
-              key: string;
-              visibility: "public" | "private";
-              url: string;
-              fields: Record<string, string>;
-            }
-          | {
-              key: string;
-              visibility: "public" | "private";
-              error: string;
-            }
-        )[];
+        presignedUrls: {
+          key: string;
+          visibility: Visibility;
+          url?: string;
+          fields?: Record<string, string>;
+          error?: string;
+        }[];
       }
       httpError?: HTTPError;
     }
@@ -231,16 +225,13 @@ You can configure the presigned URL returned by the API by passing an object to 
         uploadId: string;
         // presigned URLs to upload each part of the file
         presignedUrls:
-          | {
-              filePartName: string;
-              url: string;
-              fields: Record<string, string>;
-              partNumber: number;
-            }
-          | {
-              filePartName: string;
-              error: string;
-            }[];
+        | {
+            filePartName: string;
+            url?: string;
+            fields?: Record<string, string>;
+            partNumber?: number;
+            error?: string;
+          }[];
         }
       httpError?: HTTPError;
     }
