@@ -1,7 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
-import type { ReactElement, ReactNode, SVGProps } from "react";
-import React from "react";
+import type { ReactNode, SVGProps } from "react";
 
 function ArrowIcon(props: SVGProps<SVGSVGElement>) {
   return (
