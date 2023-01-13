@@ -14,7 +14,7 @@ import { trpc } from "../utils/trpc";
 import "../styles/globals.css";
 import "focus-visible";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], fallback: ["system-ui", "arial"] });
 
 function onRouteChange() {
   useMobileNavigationStore.getState().close();
