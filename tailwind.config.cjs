@@ -22,7 +22,7 @@ module.exports = {
     typography: require('./typography'),
     extend: {
       fontFamily: {
-        sans: ["Inter"],
+        sans: ["Inter", "sans-serif"],
       },
       boxShadow: {
         glow: '0 0 4px rgb(0 0 0 / 0.1)',
