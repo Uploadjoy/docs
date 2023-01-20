@@ -28,6 +28,7 @@ specifiers:
   mdast-util-to-string: ^3.1.0
   mdx-annotations: ^0.1.1
   next: 13.0.2
+  next-plausible: ^3.7.0
   next-seo: ^5.15.0
   postcss: ^8.4.14
   postcss-focus-visible: ^7.1.0
@@ -65,6 +66,7 @@ dependencies:
   mdast-util-to-string: 3.1.0
   mdx-annotations: 0.1.1
   next: 13.0.2_biqbaboplfbrettd7655fr4n2y
+  next-plausible: 3.7.0_pknogjuzx4bv7zxtatcb2ahtsq
   next-seo: 5.15.0_pknogjuzx4bv7zxtatcb2ahtsq
   postcss-focus-visible: 7.1.0_postcss@8.4.20
   react: 18.2.0
@@ -2525,6 +2527,18 @@ packages:
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
+
+  /next-plausible/3.7.0_pknogjuzx4bv7zxtatcb2ahtsq:
+    resolution: {integrity: sha512-YQ/b+BcPIZHOsQPB+YkAAzP4l9oELt3qKazPYvuNr5WRHRDknpyIkge4hf6aeuM+Wg4sdxaY7DfbbAUZlgREuw==}
+    peerDependencies:
+      next: ^11.1.0 || ^12.0.0 || ^13.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      next: 13.0.2_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /next-seo/5.15.0_pknogjuzx4bv7zxtatcb2ahtsq:
     resolution: {integrity: sha512-LGbcY91yDKGMb7YI+28n3g+RuChUkt6pXNpa8FkfKkEmNiJkeRDEXTnnjVtwT9FmMhG6NH8qwHTelGrlYm9rgg==}
