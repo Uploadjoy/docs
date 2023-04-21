@@ -189,16 +189,23 @@ function NavigationGroup({ group, className }: any) {
 export const navigation = [
   {
     title: "General",
+    links: [{ title: "Introduction", href: "/" }],
+  },
+  {
+    title: "Next.js",
     links: [
-      { title: "Introduction", href: "/" },
-      { title: "Quickstart", href: "/quickstart" },
+      { title: "Setup", href: "/nextjs/setup" },
+      { title: "@uploadjoy/next/client", href: "/nextjs/client" },
+      { title: "@uploadjoy/next/server", href: "/nextjs/server" },
+      // { title: "App directory beta", href: "/nextjs/appDirectory" },
     ],
   },
   {
-    title: "Resources",
+    title: "API Client",
     links: [
-      { title: "Presigned URLs", href: "/presignedUrls" },
-      { title: "Multipart Uploads", href: "/multipartUploads" },
+      { title: "Setup", href: "/client/setup" },
+      { title: "Presigned URLs", href: "/client/presignedUrls" },
+      { title: "Multipart Uploads", href: "/client/multipartUploads" },
     ],
   },
 ];

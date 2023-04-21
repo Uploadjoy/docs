@@ -90,10 +90,10 @@ export const Logo = (props: SVGProps<SVGSVGElement>) => (
             }}
           />
           <text
-            transform="matrix(.84 0 0 1 74.78 120.74)"
             style={{
               fontFamily: "KorolevRounded-Bold,'Korolev Rounded'",
               fontSize: "111px",
+              cursor: "default",
             }}
           >
             <tspan x={0} y={0}>
@@ -107,10 +107,10 @@ export const Logo = (props: SVGProps<SVGSVGElement>) => (
             }}
           />
           <text
-            transform="matrix(.84 0 0 1 15.28 120.27)"
             style={{
               fontFamily: "KorolevRounded-Bold,'Korolev Rounded'",
               fontSize: "111px",
+              cursor: "default",
             }}
           >
             <tspan x={0} y={0}>
